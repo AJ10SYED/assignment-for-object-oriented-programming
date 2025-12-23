@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class Distance{
+    public:
+    int a;
+    Distance(int A=0){
+        a=A;
+    }
+    Distance operator -( Distance c)
+    {
+        Distance temp;
+        temp.a=a-c.a;
+        if(temp.a<0){
+            cout<<"not allowed"<<endl;
+            return Distance(0);
+        }
+        else{
+            return temp;
+        }
+    }
+    
+    
+};
+int main(){
+    Distance d1(10),d2(5);
+    Distance d3;
+    d3=d1-d2;
+    cout<<"difference"<<d3.a;
+
+}
