@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+class temperature{
+    private:
+    float celcius;
+    float farenheit;
+    public:
+   temperature(int c){
+        celcius=c;
+        
+    }
+    void calculate(){
+    
+    farenheit=(celcius*9/5)+32;
+    }
+    void display()
+    {
+        cout<<"temperature in farenheit="<<farenheit;
+    }
+
+};
+int main(){
+    temperature t1=temperature(20);
+    t1.calculate();
+    t1.display();
+}
