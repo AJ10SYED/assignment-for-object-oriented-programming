@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 class time
 {
 private:
@@ -21,37 +20,42 @@ public:
         minutes = m;
         seconds = s;
     }
-    void display() const
+
+    void display() 
     {
         cout << hours << ":"
              << minutes << ":"
              << seconds << endl;
     }
-    void add(const time& t1, const time& t2)
+
+    time operator + ( time t) 
     {
-        seconds = t1.seconds + t2.seconds;
-        minutes = t1.minutes + t2.minutes;
-        hours   = t1.hours + t2.hours;
-        if (seconds >= 60)
+        time result;
+
+        result.seconds = seconds + t.seconds;
+        result.minutes = minutes + t.minutes;
+        result.hours   = hours + t.hours;
+        if (result.seconds >= 60)
         {
-            minutes += seconds / 60;
-            seconds %= 60;
+            result.minutes += result.seconds / 60;
+            result.seconds %= 60;
         }
-        if (minutes >= 60)
+
+        if (result.minutes >= 60)
         {
-            hours += minutes / 60;
-            minutes %= 60;
+            result.hours += result.minutes / 60;
+            result.minutes %= 60;
         }
+
+        return result;
     }
 };
 
 int main()
 {
-    const time t1(2, 45, 50);   
-    const time t2(1, 20, 30);  
-    time t3;                   
-    t3.add(t1, t2);
+    time t1(2, 45, 50);   
+    time t2(1, 20, 30);   
+    time t3;                    
+    t3 = t1+t2;               
     t3.display();
-
-    return 0;
 }
