@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class interest{
+    private:
+    int principal;
+    int rate;
+    int time;
+    int result;
+    public:
+   interest(int p,int r,int t){
+        principal=p;
+        rate=r;
+        time=t;
+        result=0;
+    }
+    void calculate(){
+    
+    result=(principal*rate*time)/100;
+    }
+    void display()
+    {
+        cout<<"simple interest="<<result;
+    }
+
+};
+int main(){
+    interest i1=interest(20,10,5);
+    i1.calculate();
+    i1.display();
+}
