@@ -1,10 +1,10 @@
 #include<iostream>
 using namespace std;
-class toolbooth{
+class tollbooth{
     public:
     unsigned int cars;
     double money;
-    toolbooth(){
+    tollbooth(){
         cars=0;
         money=0;
     }
@@ -21,7 +21,7 @@ class toolbooth{
     }
 };
     int main(){
-        toolbooth t1;
+        tollbooth t1;
         t1.payingcars();
         t1.nopaycars();
         t1.display();
