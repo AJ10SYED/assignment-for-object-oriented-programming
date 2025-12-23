@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int age;
+    cout<<"enter your age:";
+    cin>>age;
+    try{
+        if (age<0)
+        {
+          throw age;
+        }
+        cout<<"your age is valid";
+    }
+    catch(int){
+    cout<<"invalid age entered: age cannot be negative";
+    }
+    
+}
