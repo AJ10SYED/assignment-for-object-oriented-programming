@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+class toolbooth{
+    public:
+    unsigned int cars;
+    double money;
+    toolbooth(){
+        cars=0;
+        money=0;
+    }
+    void payingcars(){
+    cars++;
+    money+=0.50;
+    }
+    void nopaycars(){
+        cars++;
+    }
+    void display(){
+        cout<<"passed cars="<<cars<<endl;
+        cout<<" toatl money collected="<<money<<endl;
+    }
+};
+    int main(){
+        toolbooth t1;
+        t1.payingcars();
+        t1.nopaycars();
+        t1.display();
+    }
+
