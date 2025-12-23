@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+class Student{
+    protected:
+    string name;
+    int rollno;
+    public:
+   void setname(string n)
+    {
+        name=n;
+    }
+void setrollno(int r){
+rollno=r;
+}
+
+};
+class marks:public Student{
+    public:
+    int a;
+    int b;
+    int c;
+    int total;
+    int percentage;
+    void setmarks(){
+        cout<<"marks in sub 1=";
+        cin>>a;
+        cout<<"marks in sub 2=";
+        cin>>b;
+        cout<<"marks in sub 3=";
+        cin>>c;
+    }
+    void calculate(){
+total= a+b+c;
+percentage=(total*100)/300;
+cout<<"total marks:"<<total<<endl;
+cout<<"percentage:"<<percentage<<endl;
+    }
+};
+int main()
+{
+    Student s1;
+    s1.setname("ehsaan");
+    s1.setrollno(1);
+    marks m1;
+    m1.setmarks();
+    m1.calculate();
+}
